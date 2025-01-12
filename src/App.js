@@ -61,7 +61,7 @@ function App() {
       <section className="bg-white py-20 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-red-600 mb-4">
-            Welcome to Simple Pipeline App
+            Welcome to Simple Pipeline Project
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Build, deploy, and manage your React app with ease. This app
