@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 23.1.0 # Updated to use Node.js v23.1.0
+          node-version: 23.1.0 # Use Node.js v23.1.0
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -32,8 +32,7 @@ jobs:
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --delete
-          source_dir: build # Only deploy the build directory
+          args: --delete ./build/ s3://$AWS_S3_BUCKET
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -43,9 +42,9 @@ jobs:
       # Step 6: Invalidate CloudFront Cache
       - name: Invalidate CloudFront Cache
         uses: chetan/invalidate-cloudfront-action@v2
-        with:
-          distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          paths: '/*'
         env:
+          DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          PATHS: '/*'
+          AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
