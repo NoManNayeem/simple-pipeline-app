@@ -1,70 +1,114 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple Pipeline App
 
-## Available Scripts
+**Simple Pipeline App** is a React application designed to demonstrate modern CI/CD pipelines using GitHub Actions and AWS CloudFront. This app features a responsive design, data fetched from a dummy API, and an efficient deployment workflow.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive Design**: Optimized for all screen sizes.
+- **Modern CI/CD**: Automates builds and deployments seamlessly.
+- **AWS CloudFront**: Fast global delivery with high availability.
+- **Dummy API Integration**: Fetches and displays data dynamically.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before starting, ensure you have the following installed:
 
-### `npm run build`
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- [npm](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NoManNayeem/simple-pipeline-app.git
+   cd simple-pipeline-app
+   ```
 
-### `npm run eject`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Create a `.env` file:
+   ```env
+   REACT_APP_API_URL=https://jsonplaceholder.typicode.com/posts
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The app will be available at [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+.
+├── public
+│   └── index.html          # Main HTML file
+├── src
+│   ├── App.js              # Main React component
+│   ├── index.js            # Entry point
+│   ├── index.css           # Global styles
+├── .env                    # Environment variables
+├── package.json            # Dependencies and scripts
+├── README.md               # Project documentation
+└── tailwind.config.js      # Tailwind CSS configuration
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## CI/CD Pipeline
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project uses GitHub Actions for continuous integration and deployment. The pipeline performs the following steps:
 
-### Analyzing the Bundle Size
+1. **Continuous Integration**:
+   - Installs dependencies.
+   - Runs build and lint checks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Continuous Deployment**:
+   - Deploys the app to AWS CloudFront.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
 
-### Advanced Configuration
+To deploy this app manually:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Build the app:
+   ```bash
+   npm run build
+   ```
 
-### Deployment
+2. Deploy the contents of the `build` directory to your hosting provider (e.g., AWS S3 + CloudFront).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+---
+
+## Acknowledgements
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [JSONPlaceholder API](https://jsonplaceholder.typicode.com/)
+- [React](https://reactjs.org/)
