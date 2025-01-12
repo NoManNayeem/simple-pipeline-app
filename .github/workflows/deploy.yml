@@ -33,6 +33,7 @@ jobs:
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
           args: --delete
+          source_dir: build # Only deploy the build directory
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
